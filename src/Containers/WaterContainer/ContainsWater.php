@@ -2,7 +2,7 @@
 
 namespace SoConnect\Espresso\Containers\WaterContainer;
 
-use SoConnect\Espresso\Exceptions\ContainerFullException;
+use SoConnect\Espresso\Containers\ContainerFullException;
 
 interface ContainsWater
 {
