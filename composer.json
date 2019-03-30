@@ -1,0 +1,19 @@
+{
+    "name": "ltaaffe/soconnect-espresso-machine",
+    "description": "Espresso machine interface implementation for SoConnect",
+    "authors": [
+        {
+            "name": "Luke Taaffe",
+            "email": "luke@luke-taaffe.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "" : "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    }
+}
