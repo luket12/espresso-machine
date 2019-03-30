@@ -3,9 +3,9 @@
 namespace SoConnect\Espresso\Tests;
 
 use PHPUnit\Framework\TestCase;
-use SoConnect\Coffee\BeanContainer;
-use SoConnect\Coffee\WaterContainer;
-use SoConnect\Espresso\EspressoMachine;
+use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
+use SoConnect\Espresso\Containers\WaterContainer\WaterContainer;
+use SoConnect\Espresso\EspressoMachine\EspressoMachine;
 
 class TestEspressoMachine extends TestCase
 {
@@ -16,7 +16,7 @@ class TestEspressoMachine extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Espresso\EspressoMachine
+     * @covers \SoConnect\Espresso\EspressoMachine\EspressoMachine
      */
     public function testEspressoGetters()
     {
@@ -31,7 +31,7 @@ class TestEspressoMachine extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Espresso\EspressoMachine::makeEspresso
+     * @covers \SoConnect\Espresso\EspressoMachine\EspressoMachine::makeEspresso
      */
     public function testEspressoMachineCanMakeSingleEspresso()
     {
@@ -40,7 +40,7 @@ class TestEspressoMachine extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Espresso\EspressoMachine::makeDoubleEspresso
+     * @covers \SoConnect\Espresso\EspressoMachine\EspressoMachine::makeDoubleEspresso
      */
     public function testEspressoMachineCanMakeDoubleEspresso()
     {
