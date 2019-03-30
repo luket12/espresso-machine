@@ -3,7 +3,6 @@
 namespace SoConnect\Espresso\Tests;
 
 use PHPUnit\Framework\TestCase;
-use SoConnect\Espresso\EspressoMachine;
 
 class TestEspressoMachine extends TestCase
 {
@@ -14,6 +13,46 @@ class TestEspressoMachine extends TestCase
 
     public function testEspressoGettersAndSetters()
     {
-        $espressoMachine = new EspressoMachine(0,);
+
+    }
+
+    public function testEspressoMachineCanAddBeans()
+    {
+
+    }
+
+    public function testEspressoMachineCanAddWater()
+    {
+
+    }
+
+    public function testFullWaterContainerThrowsException()
+    {
+
+    }
+
+    public function testEmptyWaterContainerThrowsException()
+    {
+
+    }
+
+    public function testFullBeanContainerThrowsException()
+    {
+
+    }
+
+    public function testEmptyBeanContainerThrowsException()
+    {
+
+    }
+
+    public function testEspressoMachineCanMakeSingleEspresso()
+    {
+
+    }
+
+    public function testEspressoMachineCanMakeDoubleEspresso()
+    {
+
     }
 }
