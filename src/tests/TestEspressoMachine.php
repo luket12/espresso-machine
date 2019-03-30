@@ -3,6 +3,7 @@
 namespace SoConnect\Espresso\Tests;
 
 use PHPUnit\Framework\TestCase;
+use SoConnect\Espresso\EspressoMachine;
 
 class TestEspressoMachine extends TestCase
 {
@@ -13,7 +14,11 @@ class TestEspressoMachine extends TestCase
 
     public function testEspressoGettersAndSetters()
     {
+        $espressoMachine = new EspressoMachine(0, 0.0, 'none');
 
+        $this->assertEquals(0, $espressoMachine->getBeans());
+        $this->assertEquals(0.0, $espressoMachine->getWater());
+        $this->assertEquals('none', $this->getStatus());
     }
 
     public function testEspressoMachineCanAddBeans()

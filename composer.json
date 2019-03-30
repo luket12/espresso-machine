@@ -8,9 +8,9 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "" : "src/"
-        }
+        "classmap": [
+            "src/"
+        ]
     },
     "require": {},
     "require-dev": {
