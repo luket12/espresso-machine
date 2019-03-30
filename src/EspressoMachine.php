@@ -2,67 +2,40 @@
 
 namespace SoConnect\Espresso;
 
+use SoConnect\Coffee\BeanContainer;
+use SoConnect\Coffee\WaterContainer;
 use SoConnect\Espresso\Exceptions\ContainerException;
 use SoConnect\Espresso\Exceptions\ContainerFullException;
 use SoConnect\Espresso\Exceptions\EspressoMachineException;
 
-class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachineInterface
+class EspressoMachine implements EspressoMachineInterface
 {
-    /**
-     * @var int $beans  The number of spoons of beans available
-     */
-    private $beans;
-
     /**
      * @var string $status  The Status of the espresso machine
      */
     private $status;
 
     /**
-     * @var Float $water  The number of Litres of water
+     * @var WaterContainer $waterContainer
      */
-    private $water;
+    private $waterContainer;
+
+    /**
+     * @var BeanContainer $beanContainer
+     */
+    private $beanContainer;
 
     /**
      * EspressoMachine constructor.
-     * @param Int $beans
-     * @param Float $water
+     * @param BeanContainer $beanContainer
+     * @param WaterContainer $waterContainer
      * @param string $status
      */
-    public function __construct(Int $beans, Float $water, String $status = '')
+    public function __construct(BeanContainer $beanContainer, WaterContainer $waterContainer, String $status = '')
     {
-        $this->beans = $beans;
-        $this->water = $water;
+        $this->waterContainer = $waterContainer;
+        $this->beanContainer = $beanContainer;
         $this->status = $status;
-    }
-
-    /**
-     * @param int $numSpoons  The number of spoons available
-     * @throws ContainerFullException
-     */
-    public function addBeans(int $numSpoons): void
-    {
-        // Increment the number of beans by how many spoons
-        $this->beans += $numSpoons;
-    }
-
-    /**
-     * @param int $numSpoons  Number of spoons of beans to use
-     * @throws ContainerException
-     * @return int The number of spoons used
-     */
-    public function useBeans(int $numSpoons): int
-    {
-        // Decrement the number of beans by the num spoons
-    }
-
-    /**
-     * @return int Return the number of beans available
-     */
-    public function getBeans(): int
-    {
-        // Return the total beans count
-        return $this->beans;
     }
 
     /**
@@ -94,34 +67,34 @@ class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachine
     }
 
     /**
-     * Add a number of litres of water to the espresso machine
-     * @param float $litres The number of litres of water to add
-     * @throws ContainerFullException
+     * @return WaterContainer
      */
-    public function addWater(float $litres): void
+    public function getWaterContainer(): WaterContainer
     {
-        // Increment the water values by a float litres
-        $this->water += $litres;
+        return $this->waterContainer;
     }
 
     /**
-     * Uses a measurement of water in litres
-     * @param float $litres
-     * @throws ContainerException
-     * @return float
+     * @param WaterContainer $waterContainer
      */
-    public function useWater(float $litres): float
+    public function setWaterContainer(WaterContainer $waterContainer): void
     {
-        // Decrement the water values by a float litres
+        $this->waterContainer = $waterContainer;
     }
 
     /**
-     * Returns the amount of water available in the espresso machine
-     * @return float
+     * @return BeanContainer
      */
-    public function getWater(): float
+    public function getBeanContainer(): BeanContainer
     {
-        // Return the float for litres of water
-        return $this->water;
+        return $this->beanContainer;
+    }
+
+    /**
+     * @param BeanContainer $beanContainer
+     */
+    public function setBeanContainer(BeanContainer $beanContainer): void
+    {
+        $this->beanContainer = $beanContainer;
     }
 }

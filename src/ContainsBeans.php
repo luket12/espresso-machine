@@ -4,9 +4,8 @@ namespace SoConnect\Espresso;
 
 use SoConnect\Espresso\Exceptions\ContainerFullException;
 
-interface BeansContainer
+interface ContainsBeans
 {
-
     /**
      * Adds beans to the container
      *
