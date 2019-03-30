@@ -3,6 +3,7 @@
 namespace SoConnect\Espresso\Containers\WaterContainer;
 
 use mysql_xdevapi\Exception;
+use SoConnect\Espresso\Containers\ContainerException;
 use SoConnect\Espresso\Containers\ContainerFullException;
 
 class WaterContainer implements ContainsWater
@@ -53,7 +54,18 @@ class WaterContainer implements ContainsWater
      */
     public function useWater(float $litres): float
     {
-        // Decrement the water values by a float litres
+        $newWaterTotal = $this->water -= $litres;
+
+        var_dump($newWaterTotal);
+
+        if ($newWaterTotal < 0) {
+            throw new ContainerException('There is now water left in the container');
+        }
+
+        // Decrement the number of beans by the num spoons
+        $this->water = $newWaterTotal;
+
+        return $litres;
     }
 
 

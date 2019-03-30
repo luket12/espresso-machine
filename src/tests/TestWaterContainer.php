@@ -3,6 +3,7 @@
 namespace SoConnect\Coffee\Tests;
 
 use PHPUnit\Framework\TestCase;
+use SoConnect\Espresso\Containers\ContainerException;
 use SoConnect\Espresso\Containers\ContainerFullException;
 use SoConnect\Espresso\Containers\WaterContainer\WaterContainer;
 
@@ -44,13 +45,13 @@ class TestWaterContainer extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Coffee\Containers\WaterContainer\WaterContainer::useBeans
+     * @covers \SoConnect\Espresso\Containers\WaterContainer\WaterContainer::useWater
      */
     public function testEmptyWaterContainerThrowsException()
     {
-        $beanContainer = new WaterContainer(10, 25);
-        $beanContainer->useBeans(10);
+        $waterContainer = new WaterContainer(10.0, 25.0);
+        $waterContainer->useWater(10.0);
         $this->expectException(ContainerException::class);
-        $beanContainer->useBeans(1);
+        $waterContainer->useWater(1.0);
     }
 }
