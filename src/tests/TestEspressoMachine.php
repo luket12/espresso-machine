@@ -37,16 +37,16 @@ class TestEspressoMachine extends TestCase
      */
     public function testEspressoMachineCanAddBeans()
     {
-        $espressoMachineB = new EspressoMachine(9, 24.5, 'working');
+        $espressoMachine = new EspressoMachine(9, 24.5, 'working');
 
-        $espressoMachineB->addBeans(5);
-        $this->assertEquals(14, $espressoMachineB->getBeans());
+        $espressoMachine->addBeans(5);
+        $this->assertEquals(14, $espressoMachine->getBeans());
 
-        $espressoMachineB->addBeans(2);
-        $this->assertEquals(16, $espressoMachineB->getBeans());
+        $espressoMachine->addBeans(2);
+        $this->assertEquals(16, $espressoMachine->getBeans());
 
-        $espressoMachineB->addBeans(1000);
-        $this->assertEquals(1016, $espressoMachineB->getBeans());
+        $espressoMachine->addBeans(1000);
+        $this->assertEquals(1016, $espressoMachine->getBeans());
     }
 
     /**
@@ -55,7 +55,16 @@ class TestEspressoMachine extends TestCase
      */
     public function testEspressoMachineCanAddWater()
     {
+        $espressoMachine = new EspressoMachine(9, 24.5, 'working');
 
+        $espressoMachine->addWater(1.0);
+        $this->assertEquals(25.5, $espressoMachine->getWater());
+
+        $espressoMachine->addWater(22.3);
+        $this->assertEquals(47.8, $espressoMachine->getWater());
+
+        $espressoMachine->addWater(19000.254);
+        $this->assertEquals(19048.054, $espressoMachine->getWater());
     }
 
     /**

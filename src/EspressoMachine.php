@@ -101,6 +101,7 @@ class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachine
     public function addWater(float $litres): void
     {
         // Increment the water values by a float litres
+        $this->water += $litres;
     }
 
     /**
