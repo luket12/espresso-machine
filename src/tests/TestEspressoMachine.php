@@ -12,6 +12,10 @@ class TestEspressoMachine extends TestCase
         parent::setUp();
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine
+     */
     public function testEspressoGettersAndSetters()
     {
         $espressoMachineA = new EspressoMachine(0, 0.0, 'none');
@@ -27,6 +31,10 @@ class TestEspressoMachine extends TestCase
         $this->assertEquals('working', $espressoMachineB->getStatus());
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::addBeans
+     */
     public function testEspressoMachineCanAddBeans()
     {
         $espressoMachineB = new EspressoMachine(9, 24.5, 'working');
@@ -41,36 +49,64 @@ class TestEspressoMachine extends TestCase
         $this->assertEquals(1016, $espressoMachineB->getBeans());
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::addWater
+     */
     public function testEspressoMachineCanAddWater()
     {
 
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::addWater
+     */
     public function testFullWaterContainerThrowsException()
     {
 
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::makeEspresso
+     */
     public function testEmptyWaterContainerThrowsException()
     {
 
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::addBeans
+     */
     public function testFullBeanContainerThrowsException()
     {
 
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::makeEspresso
+     */
     public function testEmptyBeanContainerThrowsException()
     {
 
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::makeEspresso
+     */
     public function testEspressoMachineCanMakeSingleEspresso()
     {
 
     }
 
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine::makeDoubleEspresso
+     */
     public function testEspressoMachineCanMakeDoubleEspresso()
     {
 
