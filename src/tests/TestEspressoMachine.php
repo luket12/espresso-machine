@@ -29,7 +29,16 @@ class TestEspressoMachine extends TestCase
 
     public function testEspressoMachineCanAddBeans()
     {
+        $espressoMachineB = new EspressoMachine(9, 24.5, 'working');
 
+        $espressoMachineB->addBeans(5);
+        $this->assertEquals(14, $espressoMachineB->getBeans());
+
+        $espressoMachineB->addBeans(2);
+        $this->assertEquals(16, $espressoMachineB->getBeans());
+
+        $espressoMachineB->addBeans(1000);
+        $this->assertEquals(1016, $espressoMachineB->getBeans());
     }
 
     public function testEspressoMachineCanAddWater()

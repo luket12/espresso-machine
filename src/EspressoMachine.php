@@ -43,7 +43,7 @@ class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachine
     public function addBeans(int $numSpoons): void
     {
         // Increment the number of beans by how many spoons
-
+        $this->beans += $numSpoons;
     }
 
     /**
