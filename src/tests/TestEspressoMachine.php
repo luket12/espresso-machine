@@ -14,11 +14,17 @@ class TestEspressoMachine extends TestCase
 
     public function testEspressoGettersAndSetters()
     {
-        $espressoMachine = new EspressoMachine(0, 0.0, 'none');
+        $espressoMachineA = new EspressoMachine(0, 0.0, 'none');
 
-        $this->assertEquals(0, $espressoMachine->getBeans());
-        $this->assertEquals(0.0, $espressoMachine->getWater());
-        $this->assertEquals('none', $espressoMachine->getStatus());
+        $this->assertEquals(0, $espressoMachineA->getBeans());
+        $this->assertEquals(0.0, $espressoMachineA->getWater());
+        $this->assertEquals('none', $espressoMachineA->getStatus());
+
+        $espressoMachineB = new EspressoMachine(9, 24.5, 'working');
+
+        $this->assertEquals(9, $espressoMachineB->getBeans());
+        $this->assertEquals(24.5, $espressoMachineB->getWater());
+        $this->assertEquals('working', $espressoMachineB->getStatus());
     }
 
     public function testEspressoMachineCanAddBeans()
