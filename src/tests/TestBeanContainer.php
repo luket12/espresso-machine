@@ -20,7 +20,7 @@ class TestBeanContainer extends TestCase
      */
     public function testBeanContainerCanAddBeans(): void
     {
-        $beanContainer = new BeanContainer(10);
+        $beanContainer = new BeanContainer(10, 2000);
 
         $beanContainer->addBeans(5);
         $this->assertEquals(15, $beanContainer->getBeans());
