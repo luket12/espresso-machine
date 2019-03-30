@@ -1,12 +1,9 @@
 <?php
 
-namespace SoConnect\Espresso;
+namespace SoConnect\Espresso\EspressoMachine;
 
-use SoConnect\Coffee\BeanContainer;
-use SoConnect\Coffee\WaterContainer;
-use SoConnect\Espresso\Exceptions\ContainerException;
-use SoConnect\Espresso\Exceptions\ContainerFullException;
-use SoConnect\Espresso\Exceptions\EspressoMachineException;
+use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
+use SoConnect\Espresso\Containers\WaterContainer\WaterContainer;
 
 class EspressoMachine implements EspressoMachineInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SoConnect\Espresso;
+namespace SoConnect\Espresso\Containers\WaterContainer;
 
 use SoConnect\Espresso\Exceptions\ContainerFullException;
 

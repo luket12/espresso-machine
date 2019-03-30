@@ -4,8 +4,6 @@ namespace SoConnect\Coffee\Tests;
 
 use PHPUnit\Framework\TestCase;
 use SoConnect\Coffee\BeanContainer;
-use SoConnect\Coffee\WaterContainer;
-use SoConnect\Espresso\EspressoMachine;
 
 class TestBeanContainer extends TestCase
 {

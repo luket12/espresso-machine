@@ -1,6 +1,6 @@
 <?php
 
-namespace SoConnect\Espresso\Exceptions;
+namespace SoConnect\Espresso\Containers;
 
 class ContainerException extends \Exception
 {

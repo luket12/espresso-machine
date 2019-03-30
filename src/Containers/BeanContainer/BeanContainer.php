@@ -1,8 +1,6 @@
 <?php
 
-namespace SoConnect\Coffee;
-
-use SoConnect\Espresso\ContainsBeans;
+namespace SoConnect\Coffee\Containers\BeanContainer;
 
 class BeanContainer implements ContainsBeans
 {

@@ -1,6 +1,8 @@
 <?php
 
-namespace SoConnect\Espresso;
+namespace SoConnect\Espresso\EspressoMachine;
+
+use SoConnect\Coffee\Containers\BeanContainer\NoBeansException;
 
 interface EspressoMachineInterface
 {
@@ -34,5 +36,4 @@ interface EspressoMachineInterface
      * @return string
      */
     public function getStatus() : string;
-
 }

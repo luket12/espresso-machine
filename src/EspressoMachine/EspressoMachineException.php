@@ -1,6 +1,6 @@
 <?php
 
-namespace SoConnect\Espresso\Exceptions;
+namespace SoConnect\Espresso\EspressoMachine;
 
 class EspressoMachineException extends \Exception
 {

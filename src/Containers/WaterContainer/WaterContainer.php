@@ -1,8 +1,6 @@
 <?php
 
-namespace SoConnect\Coffee;
-
-use SoConnect\Espresso\ContainsWater;
+namespace SoConnect\Espresso\Containers\WaterContainer;
 
 class WaterContainer implements ContainsWater
 {

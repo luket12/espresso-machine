@@ -1,8 +1,6 @@
 <?php
 
-namespace SoConnect\Espresso;
-
-use SoConnect\Espresso\Exceptions\ContainerFullException;
+namespace SoConnect\Coffee\Containers\BeanContainer;
 
 interface ContainsBeans
 {
