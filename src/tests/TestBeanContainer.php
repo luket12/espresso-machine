@@ -3,7 +3,7 @@
 namespace SoConnect\Coffee\Tests;
 
 use PHPUnit\Framework\TestCase;
-use SoConnect\Coffee\BeanContainer;
+use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
 
 class TestBeanContainer extends TestCase
 {
@@ -14,9 +14,9 @@ class TestBeanContainer extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Espresso\EspressoMachine::addBeans
+     * @covers \SoConnect\Coffee\Containers\BeanContainer\BeanContainer::addBeans
      */
-    public function testWaterContainerCanAddBeans(): void
+    public function testBeanContainerCanAddBeans(): void
     {
         $beanContainer = new BeanContainer(10);
 
@@ -32,7 +32,7 @@ class TestBeanContainer extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Espresso\EspressoMachine::addBeans
+     * @covers \SoConnect\Coffee\Containers\BeanContainer\BeanContainer
      */
     public function testFullBeanContainerThrowsException()
     {
@@ -41,7 +41,7 @@ class TestBeanContainer extends TestCase
 
     /**
      * @test
-     * @covers \SoConnect\Espresso\EspressoMachine::makeEspresso
+     * @covers \SoConnect\Coffee\Containers\BeanContainer\BeanContainer::useBeans
      */
     public function testEmptyBeanContainerThrowsException()
     {

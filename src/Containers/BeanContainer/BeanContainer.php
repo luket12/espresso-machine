@@ -2,6 +2,9 @@
 
 namespace SoConnect\Coffee\Containers\BeanContainer;
 
+use SoConnect\Espresso\Containers\ContainerException;
+use SoConnect\Espresso\Containers\ContainerFullException;
+
 class BeanContainer implements ContainsBeans
 {
     /**
