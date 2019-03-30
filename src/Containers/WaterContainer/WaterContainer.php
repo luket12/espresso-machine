@@ -23,7 +23,7 @@ class WaterContainer implements ContainsWater
      * @param Float $water The number of litres of water
      * @param float $limit
      */
-    public function __construct(Float $water, float $limit)
+    public function __construct(Float $water, float $limit = 25)
     {
         $this->water = $water;
         $this->limit = $limit;
