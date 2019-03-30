@@ -15,7 +15,7 @@ class TestWaterContainer extends TestCase
      */
     public function testWaterContainerCanAddWater(): void
     {
-        $waterContainer = new WaterContainer(10.0);
+        $waterContainer = new WaterContainer(10.0, 1020);
 
         $waterContainer->addWater(5.4);
         $this->assertEquals(15.4, $waterContainer->getWater());
