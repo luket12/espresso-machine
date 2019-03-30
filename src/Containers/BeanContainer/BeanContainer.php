@@ -60,6 +60,15 @@ class BeanContainer implements ContainsBeans
      */
     public function useBeans(int $numSpoons): int
     {
+        $newBeanTotal = $this->beans - $numSpoons;
+
+        if ($newBeanTotal < 0) {
+            throw new ContainerException('There are no beans left to use');
+        }
+
         // Decrement the number of beans by the num spoons
+        $this->beans = $newBeanTotal;
+
+        return $numSpoons;
     }
 }

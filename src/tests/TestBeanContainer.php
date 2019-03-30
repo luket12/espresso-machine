@@ -54,6 +54,9 @@ class TestBeanContainer extends TestCase
      */
     public function testEmptyBeanContainerThrowsException()
     {
-
+        $beanContainer = new BeanContainer(10, 25);
+        $beanContainer->useBeans(10);
+        $this->expectException(ContainerException::class);
+        $beanContainer->useBeans(1);
     }
 }
