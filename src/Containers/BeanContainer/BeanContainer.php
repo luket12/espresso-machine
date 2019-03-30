@@ -13,12 +13,19 @@ class BeanContainer implements ContainsBeans
     private $beans;
 
     /**
-     * BeanContainer constructor.
-     * @param int $beans  The number of spoons of coffee beans
+     * @var int $beans  The limit of beans available
      */
-    public function __construct(int $beans)
+    private $limit;
+
+    /**
+     * BeanContainer constructor.
+     * @param int $beans The number of spoons of coffee beans
+     * @param int $limit
+     */
+    public function __construct(int $beans, int $limit = 50)
     {
         $this->beans = $beans;
+        $this->limit = $limit;
     }
 
     /**
@@ -27,8 +34,14 @@ class BeanContainer implements ContainsBeans
      */
     public function addBeans(int $numSpoons): void
     {
+        $newBeanTotal = $this->beans + $numSpoons;
+
+        if ($newBeanTotal > $this->limit) {
+            throw new ContainerFullException('The container limit has been reached');
+        }
+
         // Increment the number of beans by how many spoons
-        $this->beans += $numSpoons;
+        $this->beans = $newBeanTotal;
     }
 
     /**

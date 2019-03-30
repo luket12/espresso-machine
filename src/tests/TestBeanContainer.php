@@ -4,6 +4,8 @@ namespace SoConnect\Coffee\Tests;
 
 use PHPUnit\Framework\TestCase;
 use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
+use SoConnect\Espresso\Containers\ContainerException;
+use SoConnect\Espresso\Containers\ContainerFullException;
 
 class TestBeanContainer extends TestCase
 {
@@ -36,7 +38,14 @@ class TestBeanContainer extends TestCase
      */
     public function testFullBeanContainerThrowsException()
     {
+        $beanLimit = 25;
 
+        $beanContainer = new BeanContainer(10, $beanLimit);
+
+        $beanContainer->addBeans(15);
+
+        $this->expectException(ContainerFullException::class);
+        $beanContainer->addBeans(1);
     }
 
     /**
