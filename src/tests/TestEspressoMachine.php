@@ -18,7 +18,7 @@ class TestEspressoMachine extends TestCase
 
         $this->assertEquals(0, $espressoMachine->getBeans());
         $this->assertEquals(0.0, $espressoMachine->getWater());
-        $this->assertEquals('none', $this->getStatus());
+        $this->assertEquals('none', $espressoMachine->getStatus());
     }
 
     public function testEspressoMachineCanAddBeans()

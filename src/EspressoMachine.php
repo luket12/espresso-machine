@@ -62,6 +62,7 @@ class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachine
     public function getBeans(): int
     {
         // Return the total beans count
+        return $this->beans;
     }
 
     /**
@@ -89,6 +90,7 @@ class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachine
     public function getStatus(): string
     {
         // Return the status
+        return $this->status;
     }
 
     /**
@@ -119,5 +121,6 @@ class EspressoMachine implements BeansContainer, WaterContainer, EspressoMachine
     public function getWater(): float
     {
         // Return the float for litres of water
+        return $this->water;
     }
 }
