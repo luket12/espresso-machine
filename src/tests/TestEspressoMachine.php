@@ -52,6 +52,14 @@ class TestEspressoMachine extends TestCase
      */
     public function testEspressoMachineCanMakeDoubleEspresso()
     {
+        $beanContainer = new BeanContainer(50);
+        $waterContainer = new WaterContainer(10.0);
+        $espressoMachineA = new EspressoMachine($beanContainer, $waterContainer, 'full');
 
+        $espressoMachineA->makeDoubleEspresso();
+        $this->assertEquals(9.50, $waterContainer->getWater());
+
+        $espressoMachineA->makeDoubleEspresso();
+        $this->assertEquals(9.00, $waterContainer->getWater());
     }
 }
