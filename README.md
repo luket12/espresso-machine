@@ -1,9 +1,5 @@
-# SoConnect Espresso Machine Interface Implementation
+# SoConnect Espresso Machine
 
-Despite the brief saying there were already tests written, I decided to do this project TDD as it felt like a suitable choice, having the interface available.
+Using the interfaces specified, created a suitable OO implementation.
 
-I started with the business rules as each test and then built the implementation and refactored as I went along.
-
-Used some basic packages for improving dumping.
-
-It made sense to have an Abstract class for Containers, which just contained a limit in order to keep the code DRY
+I did this TDD, as it made the implementation code easier to follow and more structured.
