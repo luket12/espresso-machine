@@ -3,7 +3,6 @@
 namespace SoConnect\Espresso\Containers\WaterContainer;
 
 use SoConnect\Coffee\Containers\Container;
-use SoConnect\Espresso\Containers\ContainerException;
 use SoConnect\Espresso\Containers\ContainerFullException;
 
 class WaterContainer extends Container implements ContainsWater
@@ -18,7 +17,7 @@ class WaterContainer extends Container implements ContainsWater
      * @param Float $water The number of litres of water
      * @param float $limit
      */
-    public function __construct(Float $water, float $limit = 25)
+    public function __construct(float $water, float $limit = 10)
     {
         parent::__construct($limit);
         $this->water = $water;
