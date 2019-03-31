@@ -92,11 +92,6 @@ class EspressoMachine implements EspressoMachineInterface
      */
     public function getStatus(): string
     {
-        //* Add beans and water
-        //* Add beans
-        //* Add water
-        //* {Integer} Espressos left
-
         if (empty($this->beanContainer->getBeans()) && empty($this->waterContainer->getWater())) {
             return 'Add beans and water';
         } elseif (empty($this->beanContainer->getBeans()) && !empty($this->waterContainer->getWater())) {
