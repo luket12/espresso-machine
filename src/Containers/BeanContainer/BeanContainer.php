@@ -2,20 +2,16 @@
 
 namespace SoConnect\Coffee\Containers\BeanContainer;
 
+use SoConnect\Coffee\Containers\Container;
 use SoConnect\Espresso\Containers\ContainerException;
 use SoConnect\Espresso\Containers\ContainerFullException;
 
-class BeanContainer implements ContainsBeans
+class BeanContainer extends Container implements ContainsBeans
 {
     /**
      * @var int $beans  The number of spoons of beans available
      */
     private $beans;
-
-    /**
-     * @var int $beans  The limit of beans available
-     */
-    private $limit;
 
     /**
      * BeanContainer constructor.
@@ -24,8 +20,8 @@ class BeanContainer implements ContainsBeans
      */
     public function __construct(int $beans, int $limit = 50)
     {
+        parent::__construct($limit);
         $this->beans = $beans;
-        $this->limit = $limit;
     }
 
     /**

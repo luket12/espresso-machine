@@ -2,21 +2,16 @@
 
 namespace SoConnect\Espresso\Containers\WaterContainer;
 
-use mysql_xdevapi\Exception;
+use SoConnect\Coffee\Containers\Container;
 use SoConnect\Espresso\Containers\ContainerException;
 use SoConnect\Espresso\Containers\ContainerFullException;
 
-class WaterContainer implements ContainsWater
+class WaterContainer extends Container implements ContainsWater
 {
     /**
      * @var Float $water  The number of Litres of water
      */
     private $water;
-
-    /**
-     * @var float $limit  The limit of litres of water the container can hold
-     */
-    private $limit;
 
     /**
      * WaterContainer constructor.
@@ -25,8 +20,8 @@ class WaterContainer implements ContainsWater
      */
     public function __construct(Float $water, float $limit = 25)
     {
+        parent::__construct($limit);
         $this->water = $water;
-        $this->limit = $limit;
     }
 
     /**
@@ -38,7 +33,7 @@ class WaterContainer implements ContainsWater
     {
         $newWaterTotal = $this->water + $litres;
 
-        if ($newWaterTotal > $this->limit) {
+            if ($newWaterTotal > $this->limit) {
             throw new ContainerFullException('The water container is full');
         }
 
@@ -67,7 +62,6 @@ class WaterContainer implements ContainsWater
 
         return $litres;
     }
-
 
     /**
      * Returns the amount of water available in the espresso machine
