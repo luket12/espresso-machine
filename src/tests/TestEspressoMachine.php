@@ -62,4 +62,35 @@ class TestEspressoMachine extends TestCase
         $espressoMachineA->makeDoubleEspresso();
         $this->assertEquals(9.00, $waterContainer->getWater());
     }
+
+    /**
+     * @test
+     * @covers \SoConnect\Espresso\EspressoMachine\EspressoMachine::getStatus
+     */
+    public function testEspressoStatusesReportCorrectly()
+    {
+        $waterContainerA = new WaterContainer(0);
+        $beanContainerA =  new BeanContainer(0);
+        $espressoMachineA = new EspressoMachine($beanContainerA, $waterContainerA);
+
+        $this->assertEquals('Add beans and water', $espressoMachineA->getStatus());
+
+        $waterContainerB = new WaterContainer(10.0);
+        $beanContainerB =  new BeanContainer(0);
+        $espressoMachineB = new EspressoMachine($beanContainerB, $waterContainerB);
+
+        $this->assertEquals('Add beans', $espressoMachineB->getStatus());
+
+        $waterContainerB = new WaterContainer(0);
+        $beanContainerB =  new BeanContainer(10);
+        $espressoMachineB = new EspressoMachine($beanContainerB, $waterContainerB);
+
+        $this->assertEquals('Add water', $espressoMachineB->getStatus());
+
+        $waterContainerC = new WaterContainer(10.0);
+        $beanContainerC =  new BeanContainer(10);
+        $espressoMachineC = new EspressoMachine($beanContainerC, $waterContainerC);
+
+        $this->assertEquals('40 Espressos left', $espressoMachineC->getStatus());
+    }
 }
