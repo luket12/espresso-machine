@@ -39,12 +39,27 @@ class EspressoMachine implements EspressoMachineInterface
 
     /**
      * @return float Return the espresso that was made by the machine in litres
-     * @throws NoWaterException, NoBeansException
+     * @throws NoWaterException
+     * @throws NoBeansException
      */
     public function makeEspresso(): float
     {
         // Use some beans and some water to return an espresso, decrementing the total available amounts
+        $totalWaterAvailable = $this->waterContainer->getWater();
+        $totalBeansAvailable = $this->beanContainer->getBeans();
 
+        if (($totalWaterAvailable - 0.25) < 0) {
+            throw new NoWaterException('There is not enough water remaining in the container');
+        }
+
+        if (($totalBeansAvailable - 1) < 0) {
+            throw new NoBeansException('There are not enough beans remaining in the bean container');
+        }
+
+        $this->beanContainer->useBeans(1);
+        $coffeeMade = $this->waterContainer->useWater(0.25);
+
+        return $coffeeMade;
     }
 
     /**
