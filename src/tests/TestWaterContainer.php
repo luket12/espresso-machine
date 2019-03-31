@@ -42,16 +42,4 @@ class TestWaterContainer extends TestCase
         $this->expectException(ContainerFullException::class);
         $beanContainer->addWater(1.0);
     }
-
-    /**
-     * @test
-     * @covers \SoConnect\Espresso\Containers\WaterContainer\WaterContainer::useWater
-     */
-    public function testEmptyWaterContainerThrowsException()
-    {
-        $waterContainer = new WaterContainer(10.0, 25.0);
-        $waterContainer->useWater(10.0);
-        $this->expectException(ContainerException::class);
-        $waterContainer->useWater(1.0);
-    }
 }

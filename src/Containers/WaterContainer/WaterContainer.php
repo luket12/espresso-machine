@@ -33,7 +33,7 @@ class WaterContainer extends Container implements ContainsWater
     {
         $newWaterTotal = $this->water + $litres;
 
-            if ($newWaterTotal > $this->limit) {
+        if ($newWaterTotal > $this->limit) {
             throw new ContainerFullException('The water container is full');
         }
 
@@ -44,21 +44,12 @@ class WaterContainer extends Container implements ContainsWater
     /**
      * Uses a measurement of water in litres
      * @param float $litres
-     * @throws ContainerException
      * @return float
      */
     public function useWater(float $litres): float
     {
-        $newWaterTotal = $this->water -= $litres;
-
-        var_dump($newWaterTotal);
-
-        if ($newWaterTotal < 0) {
-            throw new ContainerException('There is now water left in the container');
-        }
-
         // Decrement the number of beans by the num spoons
-        $this->water = $newWaterTotal;
+        $this->water -= $litres;
 
         return $litres;
     }

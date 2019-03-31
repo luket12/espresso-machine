@@ -3,6 +3,8 @@
 namespace SoConnect\Espresso\EspressoMachine;
 
 use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
+use SoConnect\Coffee\Containers\BeanContainer\NoBeansException;
+use SoConnect\Espresso\Containers\WaterContainer\NoWaterException;
 use SoConnect\Espresso\Containers\WaterContainer\WaterContainer;
 
 class EspressoMachine implements EspressoMachineInterface
@@ -37,7 +39,7 @@ class EspressoMachine implements EspressoMachineInterface
 
     /**
      * @return float Return the espresso that was made by the machine in litres
-     * @throws EspressoMachineException
+     * @throws NoWaterException, NoBeansException
      */
     public function makeEspresso(): float
     {
@@ -47,7 +49,7 @@ class EspressoMachine implements EspressoMachineInterface
 
     /**
      * @return float Return the espresso that was made by the machine in litres
-     * @throws EspressoMachineException
+     * @throws NoWaterException, NoBeansException
      */
     public function makeDoubleEspresso(): float
     {
