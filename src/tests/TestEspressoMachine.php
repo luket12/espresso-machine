@@ -21,12 +21,12 @@ class TestEspressoMachine extends TestCase
     public function testEspressoGetters()
     {
         $beanContainer = new BeanContainer(5);
-        $waterContainer = new WaterContainer(0.0);
-        $espressoMachineA = new EspressoMachine($beanContainer, $waterContainer, 'empty');
+        $waterContainer = new WaterContainer(1.0);
+        $espressoMachineA = new EspressoMachine($beanContainer, $waterContainer, '4 Espressos left');
 
         $this->assertInstanceOf(BeanContainer::class, $espressoMachineA->getBeanContainer());
         $this->assertInstanceOf(WaterContainer::class, $espressoMachineA->getWaterContainer());
-        $this->assertEquals('empty', $espressoMachineA->getStatus());
+        $this->assertEquals('4 Espressos left', $espressoMachineA->getStatus());
     }
 
     /**

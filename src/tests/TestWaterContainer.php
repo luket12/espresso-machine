@@ -3,7 +3,6 @@
 namespace SoConnect\Coffee\Tests;
 
 use PHPUnit\Framework\TestCase;
-use SoConnect\Espresso\Containers\ContainerException;
 use SoConnect\Espresso\Containers\ContainerFullException;
 use SoConnect\Espresso\Containers\WaterContainer\WaterContainer;
 
