@@ -7,7 +7,7 @@ use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
 use SoConnect\Espresso\Containers\WaterContainer\WaterContainer;
 use SoConnect\Espresso\EspressoMachine\EspressoMachine;
 
-class TestEspressoMachine extends TestCase
+class EspressoMachineTest extends TestCase
 {
     public function setUp(): void
     {

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use SoConnect\Coffee\Containers\BeanContainer\BeanContainer;
 use SoConnect\Espresso\Containers\ContainerFullException;
 
-class TestBeanContainer extends TestCase
+class BeanContainerTest extends TestCase
 {
     public function setUp(): void
     {
